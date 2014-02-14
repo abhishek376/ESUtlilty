@@ -2,6 +2,8 @@
 We have a reporting platform based on Elasticsearch. And I often get requests to add fields or modify a field of an existing index. 
 But once the data is indexed in to ES it cannot be modified. So I developed a tool which can modify an existing Elasticsearch index.
 
+More info http://www.elasticsearch.org/blog/changing-mapping-with-zero-downtime/
+
 ## How it works
 1) The utility uses the Search (Scan) API to get 100 documents at once. Make sure the source is enabled.
 
@@ -36,7 +38,6 @@ java -jar ESUtility.jar -changeMapping -clusterName ESVM -esHost es1 -field newf
 
 Help : java -jar ESUtility.jar -changeMapping will give you all the available properties
 ```
- It accepts the following arguments
  -changeMapping        Change Mapping of an index
  -clusterName <arg>    Elasticsearch cluster name
  -esHost <arg>         Elasticsearch host name
@@ -52,7 +53,6 @@ Help : java -jar ESUtility.jar -changeMapping will give you all the available pr
 The utility reads the entire index in to memory and writes to a file. Beware of the memory. In the next version I will try to write this to multiple files.
 Help : java -jar ESUtility.jar -backup will give you all the available properties
 ```
-  usage: Backup
  -backup              Backup index to a file
  -clusterName <arg>   Elasticsearch cluster name
  -esHost <arg>        Elasticsearch host name
@@ -64,7 +64,6 @@ Help : java -jar ESUtility.jar -backup will give you all the available propertie
 Reads from a file and restores to Elasticsearch index.
 Help : java -jar ESUtility.jar -restore will give you all the available properties
 ```
- usage: Restore
  -clusterName <arg>   Elasticsearch cluster name
  -esHost <arg>        Elasticsearch host name
  -file <arg>          File to restore backup from
