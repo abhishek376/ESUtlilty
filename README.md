@@ -17,7 +17,8 @@ If you haven't heard about Elasticsearch you should check it out (http://www.ela
 Allegiance Inc (Company I work) for agreeing to open source this tool.
 
 ## Building the tool
-You can specify the Elasticsearch version in the pom file.
+Built using Maven. You can specify the Elasticsearch version in the pom file. 
+
 ```
 mvn clean package
 ```
@@ -33,8 +34,8 @@ java -jar ESUtility.jar -changeMapping -clusterName ESVM -esHost es1 -field newf
 2. Add new fields to existing Elasticsearch index. 
 3. Removes a field from exisiting Elasticsearch index.
 
- Help : java -jar ESUtility.jar -changeMapping will give you all the available properties
- ```
+Help : java -jar ESUtility.jar -changeMapping will give you all the available properties
+```
  It accepts the following arguments
  -changeMapping        Change Mapping of an index
  -clusterName <arg>    Elasticsearch cluster name
@@ -45,7 +46,7 @@ java -jar ESUtility.jar -changeMapping -clusterName ESVM -esHost es1 -field newf
  -newIndex <arg>       Index to restore to
  -oldIndex <arg>       Original Index
  -removeField <arg>    Remove a field (Optional)
- ```
+```
  
 ### Backup a index in to a file
 The utility reads the entire index in to memory and writes to a file. Beware of the memory. In the next version I will try to write this to multiple files.
@@ -70,6 +71,6 @@ Help : java -jar ESUtility.jar -restore will give you all the available properti
  -index <arg>         Index to back up
  -mappingType <arg>   Mapping Type
  -restore             Restore index from a file
- ```
+```
   
- You can write to me @abhishek376 or abhishek376@gmail.com if you have any questions.
+You can write to me @abhishek376 or abhishek376@gmail.com if you have any questions.
