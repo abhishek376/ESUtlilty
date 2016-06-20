@@ -1,4 +1,4 @@
-# ESUtlilty
+# ESUtlilty  [![Build Status](https://travis-ci.org/abhishek376/ESUtlilty.svg?branch=ES_2.3.2)](https://travis-ci.org/abhishek376/ESUtlilty)
 We have a reporting platform based on Elasticsearch. And I often get requests to add fields or modify a mapping of a field. 
 But once the data is indexed in to ES it cannot be modified. So I developed a tool which can modify mapping of an Elasticsearch index.
 
