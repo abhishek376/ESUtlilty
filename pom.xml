@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <es.version>0.90.7</es.version>
+        <es.version>2.3.2</es.version>
         <jackson.version>1.8.8</jackson.version>
         <maven.build.timestamp.format>MM-dd-yyyy_HHmm</maven.build.timestamp.format>
         <buildNumber>${maven.build.timestamp}</buildNumber>
@@ -40,6 +40,11 @@
             <artifactId>commons-cli</artifactId>
             <version>1.2</version>
         </dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.0</version>
+		</dependency>
     </dependencies>
 
     <build>

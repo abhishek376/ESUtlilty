@@ -54,7 +54,8 @@ public class Backup {
         }
     }
 
-    public static ArrayList<Map<String,Object>> ReadFile(Settings settings)
+    @SuppressWarnings("unchecked")
+	public static ArrayList<Map<String,Object>> ReadFile(Settings settings)
     {
         Map<String,Object> map;
         ArrayList<Map<String,Object>> hits = new ArrayList<Map<String,Object>>();
