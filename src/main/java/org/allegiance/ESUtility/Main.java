@@ -142,7 +142,7 @@ public class Main {
                 ScanOldIndex.Scan(settings);
                 BufferedClient.close();
                 System.out.println(settings.documentsWithError + " total documents skipped due error");
-                System.out.println("Finished restoring to the new index - " + settings.newIndex);
+                System.out.println("Finished restoring to the new index - " + settings.getNewIndex());
             }
             else
             {

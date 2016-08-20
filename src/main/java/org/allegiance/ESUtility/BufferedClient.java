@@ -1,5 +1,6 @@
 package org.allegiance.ESUtility;
 
+import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
 import org.elasticsearch.action.bulk.BulkResponse;
 
@@ -37,15 +38,8 @@ public class BufferedClient {
        BulkRequestBuilder bulkRequest = settings.client.prepareBulk();
        for(Map<String,Object> hit : buffer)
        {
-          //if(hit.keySet().size() == 9)
-
-            bulkRequest.add(settings.client.prepareIndex(settings.newIndex.equals("") ? settings.index : settings.newIndex,
-                    settings.mappingType, hit.get("reportid").toString()).setSource(hit));
-          // else
-          //{
-          //    hitsSkipped++;
-           //   settings.documentsWithError ++;
-         // }
+            bulkRequest.add(settings.client.prepareIndex(StringUtils.isBlank(settings.getNewIndex()) ? settings.index : settings.getNewIndex(),
+                    settings.getMappingType(), hit.get("reportid").toString()).setSource(hit));
        }
        settings.documentsCount = settings.documentsCount - (long)buffer.size();
        System.out.println("Flushed a batch of " + buffer.size() + " - Remaining " + settings.documentsCount + " documents");
