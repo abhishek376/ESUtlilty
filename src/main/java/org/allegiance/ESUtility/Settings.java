@@ -158,7 +158,7 @@ public class Settings {
     		org.elasticsearch.common.settings.Settings settings = org.elasticsearch.common.settings.Settings.settingsBuilder()
     		        .put("cluster.name", clusterName).build();
 			 client = TransportClient.builder().settings(settings).build()
-			        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName("esHost"), 9300));
+			        .addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(esHost), 9300));
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
